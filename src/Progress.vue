@@ -131,11 +131,6 @@ export default {
       return this.progress.trail
     },
 
-    // Reference to p element which presents the text label for progress bar. Returns null if text is not defined.
-    text () {
-      return this.progress.text
-    },
-
     animate (progress, options, cb) {
       this.progress.animate(progress, options, cb)
     },
@@ -148,6 +143,16 @@ export default {
     // Stops animation to its current position.
     stop () {
       this.progress.stop()
+    },
+
+    // Stops animation to its current position.
+    pause () {
+      this.progress.pause()
+    },
+
+    // Stops animation to its current position.
+    resume () {
+      this.progress.resume()
     },
 
     // Returns current shown progress from 0 to 1. This value changes when animation is running.

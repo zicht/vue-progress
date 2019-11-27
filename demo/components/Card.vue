@@ -6,6 +6,7 @@
     <div class="card-footer">
       <div class="text"><slot name="footer"></slot></div>
     </div>
+    <slot name="togglePlay"></slot>
   </div>
 </template>
 <style>

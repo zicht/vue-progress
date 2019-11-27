@@ -57,7 +57,7 @@ const LINE_COLOR_ANIMATION = {
 
 const CIRCLE_BASIC = {
   strokeWidth: 6,
-  easing: 'easeInOut',
+  easing: 'linear',
   duration: ANIMATE_DURATION,
   color: '#FFEA82',
   trailColor: '#eee',

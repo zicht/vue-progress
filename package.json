@@ -1,6 +1,6 @@
 {
   "name": "vue-progress",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Progressbar.js as Vue Component",
   "author": "wangdahoo <157195705@qq.com>",
   "main": "dist/vue-progress.min.js",
@@ -13,7 +13,7 @@
     "pack": "node build/pack.js"
   },
   "dependencies": {
-    "progressbar.js": "^1.0.1"
+    "progressbar.js": "^1.1.0"
   },
   "devDependencies": {
     "vue": "^2.2.2",

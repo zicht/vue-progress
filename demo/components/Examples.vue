@@ -48,6 +48,9 @@
         <div slot="footer">
           basic circle
         </div>
+        <div slot="togglePlay">
+          <button @click="togglePlay">Toggle</button>
+        </div>
       </card>
 
       <!-- Bounce Easing -->
@@ -92,13 +95,11 @@
 <script>
 import Card from './Card'
 
-import { ANIMATE_DURATION, ANIMATE_DELAY, OPTIONS } from '../constants'
+import { OPTIONS } from '../constants'
 
 function loopAnimate (target) {
-  target.animate(1.0, () => {
-    setTimeout(target.animate(0, () => {
-      setTimeout(loopAnimate(target), ANIMATE_DELAY)
-    }), ANIMATE_DELAY)
+  target.animate(1.0, {
+      duration: 5000,
   })
 }
 
@@ -111,7 +112,7 @@ export default {
     return {
       title: 'ProgressBar.js',
       subtitle: 'As a Vue Component',
-
+      playing: false,
       lineBasicOptions: OPTIONS.LINE_BASIC,
       linePercentOptions: OPTIONS.LINE_PERCENT,
       lineColorAnimationOptions: OPTIONS.LINE_COLOR_ANIMATION,
@@ -142,6 +143,14 @@ export default {
       loopAnimate(multiplePropertiesCircle)
       let customHeart = this.$refs.customHeart
       loopAnimate(customHeart)
+    },
+    togglePlay() {
+        if (this.paused) {
+            this.$refs.basicCircle.resume();
+        } else {
+            this.$refs.basicCircle.pause();
+        }
+        this.paused = !this.paused;
     }
   }
 }
